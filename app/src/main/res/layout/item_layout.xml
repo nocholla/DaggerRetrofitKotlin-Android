@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+        <!-- Begin Detail Section -->
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/background_grey"
+                android:orientation="vertical" >
+
+            <!-- START -->
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cview_profile"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_eight"
+                    android:layout_marginRight="@dimen/margin_eight"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:elevation="3dp">
+
+                <android.support.constraint.ConstraintLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <!-- Title -->
+                    <TextView
+                            android:id="@+id/item_title"
+                            android:layout_width="@dimen/width_zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_eight"
+                            android:layout_marginLeft="@dimen/margin_eight"
+                            android:layout_marginEnd="@dimen/margin_eight"
+                            android:layout_marginRight="@dimen/margin_eight"
+                            android:layout_marginTop="@dimen/margin_eight"
+                            android:textColor="@color/text_black"
+                            android:text="Title"
+                            android:textSize="@dimen/text_sixteen"
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Body -->
+                    <TextView
+                            android:id="@+id/item_body"
+                            android:layout_width="@dimen/width_zero"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_eight"
+                            android:layout_marginLeft="@dimen/margin_eight"
+                            android:layout_marginEnd="@dimen/margin_eight"
+                            android:layout_marginRight="@dimen/margin_eight"
+                            android:textColor="@color/text_grey"
+                            android:text="Body"
+                            android:textSize="@dimen/text_twelve"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            app:layout_constraintTop_toBottomOf="@+id/item_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+            <!--// END -->
+
+        </LinearLayout>
+        <!-- End Detail Section -->
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
