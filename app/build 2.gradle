@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
+
 apply plugin: 'kotlin-android'
+
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -50,22 +51,13 @@ dependencies {
     implementation "com.trello.rxlifecycle2:rxlifecycle-components:${rxlifecycleComponentsVersion}"
 
     // Okhttp3
-    implementation "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+    implementation 'com.squareup.okhttp3:okhttp:4.0.0'
 
-    // Dagger - Dependency Injection
-    implementation "com.google.dagger:dagger:${daggerVersion}"
-    implementation "com.google.dagger:dagger-android:${daggerVersion}"
-    implementation "com.google.dagger:dagger-android-support:${daggerVersion}"
-    kapt "com.google.dagger:dagger-compiler:${daggerVersion}"
-    kapt "com.google.dagger:dagger-android-processor:${daggerVersion}"
-    annotationProcessor "com.google.dagger:dagger-compiler:${daggerVersion}"
-    compileOnly 'javax.annotation:jsr250-api:1.0'
-    implementation 'javax.inject:javax.inject:1'
-
-    //implementation "com.google.dagger:dagger-android:${daggerVersion}"
-    //implementation "com.google.dagger:dagger-android-support:${daggerVersion}"
-    //annotationProcessor "com.google.dagger:dagger-android-processor:${daggerVersion}"
-    //annotationProcessor "com.google.dagger:dagger-compiler:${daggerVersion}"
+    // Dagger
+    implementation 'com.google.dagger:dagger-android:2.23.2'
+    implementation 'com.google.dagger:dagger-android-support:2.23.2'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.23.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
 
     // Picasso
     implementation "com.squareup.picasso:picasso:${picassoVersion}"

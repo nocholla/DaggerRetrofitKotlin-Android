@@ -9,9 +9,9 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
 import com.nocholla.dagger.retrofit.kotlin.R
 
-abstract class SwipeToDelete(context: Context): ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+abstract class SwipeToDelete(context: Context?): ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
-    private val deleteIcon = ContextCompat.getDrawable(context, R.drawable.ic_delete24)
+    private val deleteIcon = context?.let { ContextCompat.getDrawable(it, R.drawable.ic_delete24) }
     private val intrinsicWidth = deleteIcon!!.intrinsicWidth
     private val intrinsicHeight = deleteIcon!!.intrinsicHeight
 
@@ -29,7 +29,7 @@ abstract class SwipeToDelete(context: Context): ItemTouchHelper.SimpleCallback(0
         actionState: Int,
         isCurrentlyActive: Boolean
     ) {
-        val itemView = viewHolder!!.itemView
+        val itemView = viewHolder.itemView
         val itemHeight = itemView.bottom - itemView.top
 
         val background = ColorDrawable()
@@ -46,6 +46,6 @@ abstract class SwipeToDelete(context: Context): ItemTouchHelper.SimpleCallback(0
         deleteIcon!!.setBounds(deleteIconLeft, deleteIconTop, deleteIconRight, deleteIconBottom)
         deleteIcon.draw(c)
 
-        super.onChildDraw(c!!, recyclerView!!, viewHolder, dX, dY, actionState, isCurrentlyActive)
+        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
     }
 }
